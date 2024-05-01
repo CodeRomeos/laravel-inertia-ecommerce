@@ -1,0 +1,27 @@
+{
+    "name": "gas/core",
+    "license": "MIT",
+    "description": "Core package",
+    "authors": [
+        {
+            "name": "GAS"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "GAS\\Core\\": "src/",
+            "GAS\\Core\\Database\\Factories": "src/Database/Factories",
+            "GAS\\Core\\Database\\Seeders": "src/Database/Seeders"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GAS\\Core\\Providers\\CoreServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

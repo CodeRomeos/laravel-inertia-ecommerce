@@ -1,0 +1,25 @@
+{
+    "name": "gas/product",
+    "license": "MIT",
+    "description": "Product package",
+    "authors": [
+        {
+            "name": "GAS"        
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "GAS\\Product\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GAS\\Product\\Providers\\ProductServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

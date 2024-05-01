@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.showcase {
+	display: flex;
+}
+
+.showcase-item {
+	/* flex: 0.5; */
+}
+
+
+
+.showcase-item:not(.active) .item-info {
+	/* bottom: -90px; */
+	/* opacity: 0; */
+}
+
+
+.item-info a {
+    /* background-image: linear-gradient(90deg,currentColor 0,currentColor);
+    background-position: 0 95%;
+    background-repeat: no-repeat;
+    background-size: 0 2px;
+    color: var(--blackColor);
+    display: inline;
+    padding: .1% 0;
+    position: relative;
+    transition: background-size .25s cubic-bezier(.785,.135,.15,.86) 0s; */
+}
+/* .item-info:hover a {
+    background-size: 100% 2px;
+    color: #fff;
+} */

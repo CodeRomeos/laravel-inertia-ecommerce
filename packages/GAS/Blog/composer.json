@@ -1,0 +1,25 @@
+{
+    "name": "gas/blog",
+    "license": "MIT",
+    "description": "Blog package",
+    "authors": [
+        {
+            "name": "GAS"        
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "GAS\\Blog\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GAS\\Blog\\Providers\\BlogServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

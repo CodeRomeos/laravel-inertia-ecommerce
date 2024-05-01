@@ -1,0 +1,25 @@
+{
+    "name": "gas/shop",
+    "license": "MIT",
+    "description": "Shop package",
+    "authors": [
+        {
+            "name": "GAS"        
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "GAS\\Shop\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GAS\\Shop\\Providers\\ShopServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}
