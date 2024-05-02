@@ -3,7 +3,7 @@ import Card, { CardContent, CardTitle } from "@/Components/Card";
 import CardImage from "@/Components/Product/CardImage";
 import GuestLayout from "@/Layouts/GuestLayout";
 import { Head } from "@inertiajs/react";
-import { Posts } from "@/Data";
+import { Posts } from "@/data";
 import Surface from "@/Layouts/Surface";
 import Pagination from "@/Components/Pagination";
 export default function Blog({ auth, postList }) {

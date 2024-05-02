@@ -3,7 +3,7 @@ import GuestLayout from "@/Layouts/GuestLayout";
 import { Head } from "@inertiajs/react";
 import Heading from "@/Components/Heading";
 import FiltersSidebar from "./Filters/FiltersSidebar";
-import { productList } from "@/Data";
+import { productList } from "@/data";
 import ProductCard from "@/Components/Product/ProductCard";
 
 export default function Shop({ auth }) {
