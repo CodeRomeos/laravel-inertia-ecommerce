@@ -1,33 +1,33 @@
 export const navItems = [
     {
         title: "Dashboard",
-        href: route("dashboard"),
+        href: route("admin.dashboard"),
         icon: "dashboard",
         label: "Dashboard",
     },
-    {
-        title: "Customer",
-        href: "#",
-        icon: "users",
-        label: "Customer",
-        permit: "view customers|create customers|edit customers",
-        items: [
-            {
-                title: "New Customer",
-                href: route("customers.create"),
-                icon: "userRoundPlus",
-                label: "New Customer",
-                permit: "create customers",
-            },
-            {
-                title: "All Customer",
-                href: route("customers.index"),
-                icon: "list",
-                label: "All Customer",
-                permit: "view customers",
-            },
-        ],
-    },
+    // {
+    //     title: "Customer",
+    //     href: "#",
+    //     icon: "users",
+    //     label: "Customer",
+    //     permit: "view customers|create customers|edit customers",
+    //     items: [
+    //         {
+    //             title: "New Customer",
+    //             href: route("customers.create"),
+    //             icon: "userRoundPlus",
+    //             label: "New Customer",
+    //             permit: "create customers",
+    //         },
+    //         {
+    //             title: "All Customer",
+    //             href: route("customers.index"),
+    //             icon: "list",
+    //             label: "All Customer",
+    //             permit: "view customers",
+    //         },
+    //     ],
+    // },
     {
         title: "Users",
         href: "#",
@@ -37,14 +37,14 @@ export const navItems = [
         items: [
             {
                 title: "Add User",
-                href: route("users.create"),
+                href: route("admin.users.create"),
                 icon: "userRoundPlus",
                 label: "Add User",
                 permit: "create users",
             },
             {
                 title: "All User",
-                href: route("users.index"),
+                href: route("admin.users.index"),
                 icon: "list",
                 label: "All User",
                 permit: "view users",
@@ -60,14 +60,14 @@ export const navItems = [
         items: [
             {
                 title: "Add Role",
-                href: route("roles.create"),
+                href: route("admin.roles.create"),
                 icon: "userRoundPlus",
                 label: "Add User",
                 permit: "create roles",
             },
             {
                 title: "All Roles",
-                href: route("roles.index"),
+                href: route("admin.roles.index"),
                 icon: "list",
                 label: "All Roles",
                 permit: "view roles",
@@ -76,7 +76,7 @@ export const navItems = [
     },
     {
         title: "Acitivity Logs",
-        href: route("activityLogs.index"),
+        href: route("admin.activityLogs.index"),
         icon: "list",
         label: "Acitivity Logs",
         permit: "view activity logs",

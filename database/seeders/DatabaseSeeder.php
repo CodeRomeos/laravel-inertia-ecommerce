@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use GAS\Core\Database\Seeders\RolesTableSeeder;
+use GAS\Core\Database\Seeders\PermissionSeeder;
+use GAS\Core\Database\Seeders\RoleSeeder;
+use GAS\Core\Database\Seeders\UserSeeder;
 use GAS\Core\Database\Seeders\UsersTableSeeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,8 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(RolesTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(PermissionSeeder::class);
+        $this->call(UserSeeder::class);
         // User::factory(10)->create();
 
         // User::factory()->create([

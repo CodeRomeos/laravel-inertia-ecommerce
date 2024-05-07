@@ -16,13 +16,11 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
-            $table->string('username')->unique()->nullable();
             $table->string('mobile_code')->nullable();
             $table->string('mobile')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->unsignedBigInteger('city_id')->nullable();
             $table->timestamp('blocked_at')->nullable();
-            $table->timestamp('is_verified')->nullable();
             $table->timestamp('is_subscribed_to_newsletter')->nullable();
             $table->timestamp('last_logged_in_at')->nullable();
             $table->string('password');

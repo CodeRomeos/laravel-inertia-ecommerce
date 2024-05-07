@@ -5,14 +5,18 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use GAS\Core\Models\Role;
+use GAS\Core\Traits\ActivityLoggable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Activitylog\Traits\CausesActivity;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, SoftDeletes, HasRoles, ActivityLoggable, CausesActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -37,12 +41,10 @@ class User extends Authenticatable
     ];
 
     protected $with = [
-        'role'
+        'roles'
     ];
 
-    protected $appends = [
-        'name'
-    ];
+    protected $appends = ['name', 'is_super_admin'];
 
     /**
      * Get the attributes that should be cast.
@@ -54,6 +56,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_super_admin' => 'boolean',
         ];
     }
 
@@ -61,18 +64,15 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    function hasRole($slugs) {
-        if(is_array($slugs)) {
-            return in_array($this->role->slug, $slugs);
-        }
-
-        return false;
-    }
-
     protected function name(): Attribute
     {
         return Attribute::make(
             get: fn (mixed $value, array $attributes) => $attributes['first_name'] . ' ' . $attributes['last_name'],
         );
+    }
+
+    protected function getIsSuperAdminAttribute()
+    {
+        return $this->id == 1;
     }
 }
