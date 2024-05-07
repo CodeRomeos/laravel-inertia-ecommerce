@@ -18,9 +18,9 @@ import {
     DropdownMenuTrigger,
 } from "@/shadcn/ui/dropdown-menu";
 import RTable from "@/Components/RTable";
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import PageHeading from "@/Components/PageHeading";
 import Can from "@/Components/Can";
+import AdminLayout from "../layout/layout";
 
 export const columns = [
     {
@@ -110,7 +110,7 @@ export const columns = [
 
 export default function Users({ users }) {
     return (
-        <AuthenticatedLayout>
+        <AdminLayout>
             <Head>
                 <title>Users</title>
             </Head>
@@ -147,6 +147,6 @@ export default function Users({ users }) {
                     </div>
                 </div>
             </ScrollArea>
-        </AuthenticatedLayout>
+        </AdminLayout>
     );
 }

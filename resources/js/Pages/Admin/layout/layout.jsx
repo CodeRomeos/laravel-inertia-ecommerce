@@ -5,10 +5,8 @@ import Header from "./header";
 import Sidebar from "./sidebar";
 import { usePage } from "@inertiajs/react";
 import { toast } from "sonner";
-import { Alert, AlertDescription, AlertTitle } from '@/shadcn/ui/alert';
-import { AlertCircle } from 'lucide-react';
 
-export default function DashboardLayout({
+export default function AdminLayout({
   children,
 }) {
   const { flash } = usePage().props;
