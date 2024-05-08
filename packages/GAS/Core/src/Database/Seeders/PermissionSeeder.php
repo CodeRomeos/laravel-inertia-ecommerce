@@ -26,7 +26,6 @@ class PermissionSeeder extends Seeder
             [
                 'name' => 'dashboard', 
                 'permissions' => [
-                    'dashboard all transactions', 
                     'dashboard overview stats', 
                     'dashboard overview grouped stats', 
                 ]
