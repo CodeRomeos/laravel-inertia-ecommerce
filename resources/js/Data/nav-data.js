@@ -30,7 +30,7 @@ export const navItems = [
     // },
     {
         title: "Users",
-        href: "#",
+        href: route("admin.users.index"),
         icon: "users",
         label: "Users",
         permit: "view users|create users|edit users",

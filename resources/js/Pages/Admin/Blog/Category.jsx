@@ -9,12 +9,12 @@ import { Textarea } from "@/shadcn/ui/textarea";
 import React from "react";
 import EditorInput from "../components/EditorInput";
 import { textToSlug } from "@/Helpers/GlobalFunctions";
-import TwoColumnLayout from "../layout/TwoColumnLayout";
 import { TextMuted } from "@/shadcn/ui/text-muted";
 import { MoreHorizontal, PlusCircle } from "lucide-react";
 import ShadcnCard from "@/Components/Admin/ShadcnCard";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/shadcn/ui/dropdown-menu";
 import MetaInputsCard from "@/Components/Admin/MetaInputsCard";
+import TwoColumnLayout from "../layout/TwoColumnLayout";
 
 export default function Category({ blogCategory }) {
     const [title, titleSet] = React.useState(blogCategory ? blogCategory.title : "");

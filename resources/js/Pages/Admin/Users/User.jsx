@@ -8,7 +8,6 @@ import InputError from "@/Components/InputError";
 import React from "react";
 import EditorInput from "@/Components/EditorInput";
 import { textToSlug } from "@/Helpers/GlobalFunctions";
-import TwoColumnLayout from "../../Layouts/TwoColumnLayout";
 import { TextLarge, TextMuted } from "@/shadcn/ui/text-muted";
 import {
     MoreHorizontal,
@@ -37,6 +36,7 @@ import {
 } from "@/shadcn/ui/select";
 import Can from "@/Components/Can";
 import UserAssignEntities from "@/Components/Users/UserAssignEntitiesForm";
+import TwoColumnLayout from "../layout/TwoColumnLayout";
 
 export default function User({ user, roles }) {
     const [name, nameSet] = React.useState(user ? user.name : "");

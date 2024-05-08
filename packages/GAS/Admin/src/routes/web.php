@@ -68,6 +68,6 @@ Route::get('/customers', function () {
 })->name('customers.index');
 
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return Inertia::render('Admin/Dashboard');
 })->name('dashboard');
