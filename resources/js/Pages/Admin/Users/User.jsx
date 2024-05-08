@@ -16,7 +16,7 @@ import {
     Share2Icon,
     // User,
 } from "lucide-react";
-import ShadcnCard from "@/Components/ShadcnCard";
+import ShadcnCard from "@/Components/Admin/ShadcnCard";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -35,7 +35,6 @@ import {
     SelectValue,
 } from "@/shadcn/ui/select";
 import Can from "@/Components/Can";
-import UserAssignEntities from "@/Components/Users/UserAssignEntitiesForm";
 import TwoColumnLayout from "../layout/TwoColumnLayout";
 
 export default function User({ user, roles }) {
@@ -52,9 +51,9 @@ export default function User({ user, roles }) {
         e.preventDefault();
 
         if (user) {
-            post(route("users.update", { id: user.id }));
+            post(route("admin.users.update", { id: user.id }));
         } else {
-            post(route("users.store"));
+            post(route("admin.users.store"));
         }
     };
 
@@ -82,7 +81,7 @@ export default function User({ user, roles }) {
                     </PageHeading.Title>
                     <PageHeading.Actions>
                         <Button asChild variant="outline">
-                            <Link href={route("users.index")}>Cancel</Link>
+                            <Link href={route("admin.users.index")}>Cancel</Link>
                         </Button>
                         <Can permit="create users">
                             <Button asChild>
@@ -124,7 +123,7 @@ export default function User({ user, roles }) {
                     <div>
                         {user ? (
                             <Link className="text-blue-600 italic text-sm">
-                                {route("users.edit", user.id)}
+                                {route("admin.users.edit", user.id)}
                             </Link>
                         ) : (
                             ""
@@ -290,14 +289,6 @@ export default function User({ user, roles }) {
                             <TextLarge className={`leading-[0] capitalize`}>
                                 {user.roles.map((r) => r.name).join(", ")}
                             </TextLarge>
-                        </ShadcnCard>
-                    )}
-                    {/* <MetaInputsCard data={data} setData={setData} errors={errors} /> */}
-                    {user && (
-                        <ShadcnCard
-                            title={`Assign Entities (${user.entities.length})`}
-                        >
-                            <UserAssignEntities user={user} />
                         </ShadcnCard>
                     )}
                 </TwoColumnLayout.Aside>
