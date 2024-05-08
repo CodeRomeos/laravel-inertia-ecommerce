@@ -1,9 +1,9 @@
 <?php
 
-namespace GAS\Admin\Http\Controllers\Role;
+namespace GAS\Admin\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\RoleResource;
+use GAS\Core\Http\Resources\RoleResource;
 use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 use Inertia\Inertia;

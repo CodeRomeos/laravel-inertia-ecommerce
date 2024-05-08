@@ -3,7 +3,7 @@
 use GAS\Admin\Http\Controllers\Auth\AuthenticatedSessionController;
 use GAS\Admin\Http\Controllers\Blog\BlogCategoryController;
 use GAS\Admin\Http\Controllers\Blog\BlogPostController;
-use GAS\Admin\Http\Controllers\Role\RoleController;
+use GAS\Admin\Http\Controllers\RoleController;
 use GAS\Admin\Http\Controllers\UserController;
 use GAS\Admin\Http\Controllers\ActivityController;
 use Illuminate\Support\Facades\Route;

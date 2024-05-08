@@ -13,10 +13,14 @@ import { ScrollArea } from "@/shadcn/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shadcn/ui/tabs";
 import DashboardLayout from "./layout/layout";
 import PageHeading from "./components/PageHeading";
+import { Head } from "@inertiajs/react";
 
 export default function Dashboard({auth}) {
     return (
         <DashboardLayout>
+            <Head>
+                <title>Dashboard</title>
+            </Head>
             <ScrollArea className="h-full">
                 <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
                     <PageHeading>
