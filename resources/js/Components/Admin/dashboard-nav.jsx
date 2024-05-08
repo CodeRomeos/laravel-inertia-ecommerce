@@ -49,13 +49,10 @@ const ListItem = ({ item, active }) => {
 
     return (
         <li>
-            <Link
-                href={item.href}
-                className={isActive ? "text-red-600 dark:text-red-600 bg-red-100" : ""}
-            >
+            <Link href={item.href} className={cn(isActive ? "text-blue-500" : "")}>
                 <span
                     className={cn(
-                        "group flex items-center px-3 py-2 text-sm font-medium hover:bg-red-500 hover:text-white",
+                        "group flex items-center px-3 py-2 text-sm font-medium transition-all hover:bg-slate-500 hover:text-white",
                         path === item.href ? "bg-accent" : "transparent",
                         item.disabled && "cursor-not-allowed opacity-80"
                     )}
@@ -102,7 +99,7 @@ const SubMenu = ({ items }) => {
     )
         return null;
     return (
-        <ul className="bg-red-50 dark:bg-slate-900">
+        <ul className="bg-slate-100 dark:bg-slate-900">
             {items.map((item, i) => (
                 <ListItem
                     active={activeIndex === i}
@@ -144,7 +141,7 @@ const NavItem = ({ item }) => {
     }
 
     return (
-        <div className={`${open ? "bg-red-200 dark:bg-slate-700" : ""}`}>
+        <div className={`${open ? "bg-slate-300 dark:bg-slate-700" : ""}`}>
             <ParentContainer
                 className={"cursor-pointer"}
                 item={item}

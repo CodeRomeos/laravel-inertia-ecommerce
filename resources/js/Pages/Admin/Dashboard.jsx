@@ -14,14 +14,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shadcn/ui/tabs";
 import DashboardLayout from "./layout/layout";
 import PageHeading from "./components/PageHeading";
 
-export default function Dashboard() {
+export default function Dashboard({auth}) {
     return (
         <DashboardLayout>
             <ScrollArea className="h-full">
                 <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
                     <PageHeading>
                         <PageHeading.Title>
-                            Hi, Welcome back 👋
+                            Hi {auth.user.first_name}, Welcome back 👋
                         </PageHeading.Title>
                         <PageHeading.Actions>
                             <Button>Download</Button>
