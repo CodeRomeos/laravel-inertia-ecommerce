@@ -5,7 +5,7 @@ use GAS\Admin\Http\Controllers\Blog\BlogCategoryController;
 use GAS\Admin\Http\Controllers\Blog\BlogPostController;
 use GAS\Admin\Http\Controllers\Role\RoleController;
 use GAS\Admin\Http\Controllers\UserController;
-use GAS\Core\Http\Controllers\ActivityController;
+use GAS\Admin\Http\Controllers\ActivityController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -13,7 +13,6 @@ Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])
     ->name('logout');
 
 Route::prefix('users')->name('users.')->controller(UserController::class)->group(function () {
-    Route::post('{id}/assign-entities', 'assignEntities')->name('assignEntities')->middleware(['can:edit users']);
     Route::post('update/{id}', 'update')->name('update')->middleware(['can:edit users']);
     Route::post('store', 'store')->name('store')->middleware(['can:create users']);
     Route::get('create', 'create')->name('create')->middleware(['can:create users']);

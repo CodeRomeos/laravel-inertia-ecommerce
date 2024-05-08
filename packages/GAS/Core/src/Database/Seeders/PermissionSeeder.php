@@ -29,7 +29,6 @@ class PermissionSeeder extends Seeder
                     'dashboard all transactions', 
                     'dashboard overview stats', 
                     'dashboard overview grouped stats', 
-                    'dashboard select entity dropdown'
                 ]
             ], 
             [

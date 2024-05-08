@@ -48,7 +48,7 @@ class UserController extends Controller
         $roles = Role::whereIn('id', $request->role_ids)->get();
         $user->syncRoles($roles);
 
-        return redirect()->route('users.edit', $user->id)->with(['flash_type' => 'success', 'flash_message' => 'User created successfully', 'flash_description' => $user->name]);
+        return redirect()->route('admin.users.edit', $user->id)->with(['flash_type' => 'success', 'flash_message' => 'User created successfully', 'flash_description' => $user->name]);
     }
 
     public function update(Request $request, $id)
@@ -61,7 +61,7 @@ class UserController extends Controller
             'password' => 'nullable|string|min:8',
         ]);
 
-        if ($request->has('password')) {
+        if ($request->filled('password')) {
             $request->merge(['password' => bcrypt($request->password)]);
         } else {
             $request->except(['password']);
@@ -74,25 +74,6 @@ class UserController extends Controller
         $roles = Role::whereIn('id', $request->role_ids)->get();
         $user->syncRoles($roles);
 
-        return redirect()->route('users.edit', $id)->with(['flash_type' => 'success', 'flash_message' => 'User updated successfully', 'flash_description' => $user->name]);
-    }
-
-    public function assignEntities(Request $request, $id) 
-    {
-        $request->validate([
-            'entity_ids.*' => 'nullable|exists:entities,id'
-        ]);
-
-        $user = User::findOrFail($request->id);
-
-        $user->entities()->sync($request->entity_ids);
-
-        activity()
-            ->causedBy($request->user())
-            ->performedOn($user)
-            ->event('assigned_entities_changed')
-            ->log('Changed assigned entities - User - ' . $user->name . ' (#' . $user->id . '). By User : ' . $request->user()->name . ' (#' . $request->user()->id . ')');
-
-        return redirect()->back()->with(['flash_type' => 'success', 'flash_message' => 'Entities assigned to user', 'flash_description' => "User - $user->name"]);
+        return redirect()->route('admin.users.edit', $id)->with(['flash_type' => 'success', 'flash_message' => 'User updated successfully', 'flash_description' => $user->name]);
     }
 }
