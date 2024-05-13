@@ -1,0 +1,27 @@
+{
+    "name": "gas/attribute",
+    "license": "MIT",
+    "description": "Attribute package",
+    "authors": [
+        {
+            "name": "GAS"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "GAS\\Attribute\\": "src/",
+            "GAS\\Attribute\\Database\\Factories": "src/Database/Factories",
+            "GAS\\Attribute\\Database\\Seeders": "src/Database/Seeders"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GAS\\Attribute\\Providers\\AttributeServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}
