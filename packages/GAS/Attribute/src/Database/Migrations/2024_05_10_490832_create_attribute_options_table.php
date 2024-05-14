@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('attribute_options', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
+            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete()->cascadeOnUpdate();
             $table->foreignId('attribute_id')->constrained('attributes')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('admin_name')->nullable();
             $table->integer('sort_order')->nullable();

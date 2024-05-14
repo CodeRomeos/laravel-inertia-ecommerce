@@ -13,7 +13,7 @@ class AttributeOption extends Model
 
     public $timestamps = false;
 
-    public $translatedAttributes = ['label'];
+    public $translatedAttributes = ['title'];
 
     protected $fillable = [
         'admin_name',

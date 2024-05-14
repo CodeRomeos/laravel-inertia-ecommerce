@@ -4,7 +4,7 @@ namespace GAS\Attribute\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PostTranslation extends Model
+class AttributeTranslation extends Model
 {
     public $timestamps = false;
 

@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('attribute_translations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('attribute_id')->unsigned();
+            $table->bigInteger('attribute_id')->unsigned();
             $table->string('locale')->index();
-            $table->string('title');
-            $table->text('content');
+            $table->string('name');
 
             $table->unique(['attribute_id', 'locale']);
             $table->foreign('attribute_id')->references('id')->on('attributes')->onDelete('cascade');

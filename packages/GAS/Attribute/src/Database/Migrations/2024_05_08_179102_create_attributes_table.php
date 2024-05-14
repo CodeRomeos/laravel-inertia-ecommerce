@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('attributes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->nullOnDelete();
-            $$table->string('code')->unique();
+            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('code')->unique();
             $table->string('admin_name');
             $table->string('type');
             $table->string('swatch_type')->nullable();
             $table->integer('position')->nullable();
+            $table->boolean('is_unique')->default(0);
             $table->boolean('is_filterable')->default(0);
             $table->boolean('is_comparable')->default(0);
             $table->boolean('is_user_defined')->default(1);
