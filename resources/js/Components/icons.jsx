@@ -22,6 +22,7 @@ import {
     LayoutDashboardIcon,
     Loader2,
     LogIn,
+    Boxes,
     // LucideIcon,
     // LucideProps,
     Moon,
@@ -48,14 +49,19 @@ import {
     Coins,
     Handshake,
     PiggyBank,
-    Boxes,
+    Shirt,
     TableCellsSplit,
     FileDown,
-    Landmark
+    Landmark,
+    LayoutList,
+    Component
 } from "lucide-react";
 
 export const Icons = {
+    shirt: Shirt,
+    component: Component,
     dashboard: LayoutDashboardIcon,
+    layoutList: LayoutList,
     logo: Command,
     login: LogIn,
     landmark: Landmark,

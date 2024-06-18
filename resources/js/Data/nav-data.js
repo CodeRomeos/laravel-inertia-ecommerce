@@ -5,6 +5,31 @@ export const navItems = [
         icon: "dashboard",
         label: "Dashboard",
     },
+    {
+        title: "Catalog",
+        href: "#",
+        icon: "shirt",
+        label: "Catalog",
+        permit: "view products|create products|edit products",
+        items: [
+            {
+                title: "Attributes",
+                // href: route("admin.attributes.index"),
+                href: "#",
+                icon: "layoutList",
+                label: "Attributes",
+                permit: "view attributes",
+            },
+            {
+                title: "Attribute Family",
+                // href: route("admin.attributes.index"),
+                href: "#",
+                icon: "component",
+                label: "Attribute Family",
+                permit: "view attributes",
+            },
+        ],
+    },
     // {
     //     title: "Customer",
     //     href: "#",
