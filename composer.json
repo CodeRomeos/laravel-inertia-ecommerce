@@ -33,7 +33,7 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "GAS\\Regions\\": "packages/GAS/Regions/src/",
+            "GAS\\Region\\": "packages/GAS/Region/src/",
             "GAS\\Admin\\": "packages/GAS/Admin/src/",
             "GAS\\Attribute\\": "packages/GAS/Attribute/src/",
             "GAS\\Shop\\": "packages/GAS/Shop/src/",

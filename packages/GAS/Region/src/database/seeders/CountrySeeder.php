@@ -5500,6 +5500,7 @@ class CountrySeeder extends Seeder
             "updated_at" => "12/28/2023",
         ],
     ];
+
     /**
      * Run the database seeds.
      */
