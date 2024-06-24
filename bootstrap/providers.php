@@ -2,7 +2,7 @@
 
 return [
     App\Providers\AppServiceProvider::class,
-    GAS\Regions\Providers\RegionServiceProvider::class,
+    GAS\Region\Providers\RegionServiceProvider::class,
     GAS\Admin\Providers\AdminServiceProvider::class,
     GAS\Attribute\Providers\AttributeServiceProvider::class,
     GAS\Shop\Providers\ShopServiceProvider::class,

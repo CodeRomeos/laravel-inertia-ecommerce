@@ -1,0 +1,24 @@
+{
+    "name": "gas/regions",
+    "autoload": {
+        "psr-4": {
+            "GAS\\Region\\": "src/",
+            "GAS\\Region\\Database\\Seeders": "src/database/seeders"
+        }
+    },
+    "authors": [
+        {
+            "name": "GAS"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GAS\\Region\\Providers\\RegionServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

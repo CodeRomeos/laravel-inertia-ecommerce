@@ -21,7 +21,7 @@ class AttributeFamilySeeder extends Seeder
         DB::table('attribute_families')->truncate();
 
         AttributeFamily::create(['user_id' => 1, 'name' => 'default', 'code' => 'default', 'status' => 1]);
-        
+
         Schema::disableForeignKeyConstraints();
         activity()->enableLogging();
     }

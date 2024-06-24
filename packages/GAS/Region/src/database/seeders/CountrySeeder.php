@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace GAS\Region\Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -5500,6 +5500,7 @@ class CountrySeeder extends Seeder
             "updated_at" => "12/28/2023",
         ],
     ];
+
     /**
      * Run the database seeds.
      */

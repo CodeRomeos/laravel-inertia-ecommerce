@@ -19,19 +19,20 @@ class AttributeSeeder extends Seeder
         activity()->disableLogging();
         Schema::disableForeignKeyConstraints();
         DB::table('attributes')->truncate();
+        DB::table('attribute_translations')->truncate();
 
         Attribute::create([
             'user_id' => 1, 'code' => 'color', 'admin_name' => 'Color', 'name' => 'Color',
-            'type' => InputTypeEnum::select, 'swatch_type' => 'color', 'position' => 0, 
+            'type' => InputTypeEnum::select, 'swatch_type' => 'color', 'position' => 0,
             'is_filterable' => 1, 'is_comparable' => 1, 'is_visible_on_front' => 1
         ]);
-        
+
         Attribute::create([
             'user_id' => 1, 'code' => 'size', 'admin_name' => 'Size', 'name' => 'Color',
-            'type' => InputTypeEnum::select, 'position' => 0, 
+            'type' => InputTypeEnum::select, 'position' => 0,
             'is_filterable' => 1, 'is_comparable' => 1, 'is_visible_on_front' => 1
         ]);
-        
+
         Schema::disableForeignKeyConstraints();
         activity()->enableLogging();
     }

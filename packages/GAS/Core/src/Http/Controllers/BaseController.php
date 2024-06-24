@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace GAS\Core\Http\Controllers;
 
 use Exception;
 use stdClass;

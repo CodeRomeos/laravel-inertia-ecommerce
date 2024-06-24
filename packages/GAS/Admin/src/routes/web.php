@@ -32,8 +32,6 @@ Route::prefix('catalog')->name('catalog.')->group(function () {
 });
 
 Route::prefix('blog')->name('blog.')->group(function () {
-    
-
     Route::controller(BlogPostController::class)->prefix('posts')->name('posts.')->group(function () {
         Route::post('update/{id}', 'update')->name('update');
         Route::post('store', 'store')->name('store');
@@ -58,7 +56,6 @@ Route::prefix('roles')->name('roles.')->middleware('auth')->controller(RoleContr
     Route::get('', 'index')->name('index')->middleware(['can:view roles']);
 });
 
-
 Route::prefix('activity-logs')->name('activityLogs.')->middleware('auth')->controller(ActivityController::class)->group(function () {
     Route::get('', 'index')->name('index')->middleware(['can:view activity logs']);
 });
@@ -74,7 +71,6 @@ Route::prefix('attribute-families')->name('attributeFamilies.')->controller(Attr
 Route::get('/customers', function () {
     return Inertia::render('Admin/Customers/Customers');
 })->name('customers.index');
-
 
 Route::get('/dashboard', function () {
     return Inertia::render('Admin/Dashboard');

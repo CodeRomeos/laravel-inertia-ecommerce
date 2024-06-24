@@ -13,7 +13,7 @@ import Surface from "@/Layouts/Surface";
 // import Promo from "@/Components/Promo";
 
 import USPBarItem from "@/Components/USPBar";
-import { USPItem, productShowcaseList } from "@/data";
+import { USPItem, productShowcaseList } from "@/Data";
 import Intro from "@/Components/Intro";
 import SwiperCarousel from "@/Components/SwiperCarousel";
 import ShowCase from "@/Components/Showcase/Showcase";
