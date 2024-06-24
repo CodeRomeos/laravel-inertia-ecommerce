@@ -15,4 +15,9 @@ class AttributeFamilyController extends Controller
         $attributeFamilies = AttributeFamily::latest()->paginate($request->get('limit', config('app.pagination_limit')))->withQueryString();
         return Inertia::render('Admin/AttributeFamilies/AttributeFamilies', ['attributeFamilies' => AttributeFamilyResource::collection($attributeFamilies)]);
     }
+
+    public function create(Request $request)
+    {
+        return Inertia::render('Admin/AttributeFamilies/AttributeFamily');
+    }
 }

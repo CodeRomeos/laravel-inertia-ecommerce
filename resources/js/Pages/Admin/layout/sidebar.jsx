@@ -1,6 +1,6 @@
 import { cn } from "@/shadcn";
 import { DashboardNav } from "@/Components/Admin/dashboard-nav";
-import { navItems } from "@/Data/nav-data";
+import { navItems } from "@/data/nav-data";
 
 export default function Sidebar() {
     return (
