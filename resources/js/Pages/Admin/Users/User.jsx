@@ -43,7 +43,7 @@ export default function User({ user, roles }) {
         first_name: user ? user?.first_name : "",
         last_name: user ? user?.last_name : "",
         email: user ? user?.email : "",
-        role_ids: user ? user.roles.map(r => r.id) : [],
+        role_ids: user ? user.roles.map((r) => r.id) : [],
         password: "",
     });
 
@@ -81,7 +81,9 @@ export default function User({ user, roles }) {
                     </PageHeading.Title>
                     <PageHeading.Actions>
                         <Button asChild variant="outline">
-                            <Link href={route("admin.users.index")}>Cancel</Link>
+                            <Link href={route("admin.users.index")}>
+                                Cancel
+                            </Link>
                         </Button>
                         <Can permit="create users">
                             <Button asChild>

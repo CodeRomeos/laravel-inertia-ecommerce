@@ -61,10 +61,10 @@ class UserController extends Controller
             'password' => 'nullable|string|min:8',
         ]);
 
-        if ($request->filled('password')) {
+        if ($request->filled('password') && $request->password) {
             $request->merge(['password' => bcrypt($request->password)]);
         } else {
-            $request->except(['password']);
+            $request->offsetUnset('password');
         }
 
         $user = User::findOrFail($id);

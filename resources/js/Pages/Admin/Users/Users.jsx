@@ -60,7 +60,7 @@ export const columns = [
         header: "Role",
         cell: ({ row }) => (
             <div className="capitalize">
-                {row.original.roles.map(r => r.name).join(', ')}
+                {row.original.roles.map((r) => r.name).join(", ")}
             </div>
         ),
     },
@@ -75,7 +75,12 @@ export const columns = [
                 <div className="text-right">
                     <Can permit="edit users">
                         <Button asChild variant="outline" size="icon">
-                            <Link href={route("admin.users.edit", row.original.id)}>
+                            <Link
+                                href={route(
+                                    "admin.users.edit",
+                                    row.original.id
+                                )}
+                            >
                                 <Pencil className="h-4 w-4" />
                             </Link>
                         </Button>
