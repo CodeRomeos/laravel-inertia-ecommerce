@@ -6,6 +6,7 @@ use GAS\Admin\Http\Controllers\Blog\BlogPostController;
 use GAS\Admin\Http\Controllers\RoleController;
 use GAS\Admin\Http\Controllers\UserController;
 use GAS\Admin\Http\Controllers\ActivityController;
+use GAS\Admin\Http\Controllers\AttributeFamilies\AttributeFamilyController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -57,6 +58,14 @@ Route::prefix('roles')->name('roles.')->middleware('auth')->controller(RoleContr
 
 Route::prefix('activity-logs')->name('activityLogs.')->middleware('auth')->controller(ActivityController::class)->group(function () {
     Route::get('', 'index')->name('index')->middleware(['can:view activity logs']);
+});
+
+Route::prefix('attribute-families')->name('attributeFamilies.')->controller(AttributeFamilyController::class)->group(function () {
+    Route::post('update/{id}', 'update')->name('update');
+    Route::post('store', 'store')->name('store');
+    Route::get('create', 'create')->name('create');
+    Route::get('{id}', 'edit')->name('edit');
+    Route::get('', 'index')->name('index');
 });
 
 Route::get('/customers', function () {

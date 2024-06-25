@@ -22,8 +22,7 @@ export const navItems = [
             },
             {
                 title: "Attribute Family",
-                // href: route("admin.attributes.index"),
-                href: "#",
+                href: route("admin.attributeFamilies.index"),
                 icon: "component",
                 label: "Attribute Family",
                 permit: "view attributes",
