@@ -1,6 +1,6 @@
 {
     "name": "coderomeos/blaze",
-    "version": "v0.0.6-beta1",
+    "version": "v0.0.7",
     "type": "project",
     "description": "A laravel ecommerce using inertia and react",
     "keywords": [
