@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import AdminProvider from "./admin-provider";
 import { Toaster } from "@/shadcn/ui/sonner";
 import Header from "./header";
@@ -6,29 +6,30 @@ import Sidebar from "./sidebar";
 import { usePage } from "@inertiajs/react";
 import { toast } from "sonner";
 
-export default function AdminLayout({
-  children,
-}) {
-  const { flash } = usePage().props;
+export default function AdminLayout({ children }) {
+    const { flash } = usePage().props;
 
-  React.useEffect(() => {
-    if(flash.message) {
-      const options = { description: flash.description, position: "top-right" };
-      if(flash.type === "success") {
-        toast.success(flash.message, options);
-      } else {
-        toast.error(flash.message, options);
-      }
-    }
-  }, [flash])
+    React.useEffect(() => {
+        if (flash.message) {
+            const options = {
+                description: flash.description,
+                position: "top-right",
+            };
+            if (flash.type === "success") {
+                toast.success(flash.message, options);
+            } else {
+                toast.error(flash.message, options);
+            }
+        }
+    }, [flash]);
 
-  return (
-      <AdminProvider>
-          <Header />
-          <div className="flex h-screen overflow-hidden">
-              <Sidebar />
-              <div className="w-full pt-12 tracking-tight bg-background">
-                  {/* <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
+    return (
+        <AdminProvider>
+            <Header />
+            <div className="flex h-screen overflow-hidden">
+                <Sidebar />
+                <div className="w-full pt-12 tracking-tight bg-background">
+                    {/* <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
                       {flash.message && (
                           <Alert>
                               <AlertCircle className="h-4 w-4" />
@@ -39,10 +40,10 @@ export default function AdminLayout({
                           </Alert>
                       )}
                   </div> */}
-                  {children}
-              </div>
-          </div>
-          <Toaster />
-      </AdminProvider>
-  );
+                    {children}
+                </div>
+            </div>
+            <Toaster />
+        </AdminProvider>
+    );
 }

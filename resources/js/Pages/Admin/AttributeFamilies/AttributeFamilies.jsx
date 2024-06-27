@@ -1,6 +1,8 @@
 import { Button } from "@/shadcn/ui/button";
 import { ScrollArea } from "@/shadcn/ui/scroll-area";
-import { Head, Link } from "@inertiajs/react";
+import DashboardLayout from "../layout/layout";
+import PageHeading from "../components/PageHeading";
+import { Link } from "@inertiajs/react";
 import {
     ArrowUpDown,
     ChevronDown,
@@ -17,10 +19,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/shadcn/ui/dropdown-menu";
-import RTable from "@/Components/RTable";
-import PageHeading from "@/Components/PageHeading";
-import Can from "@/Components/Can";
-import AdminLayout from "../layout/layout";
+import RTable from "@/Components/Admin/RTable";
 
 export const columns = [
     {
@@ -50,19 +49,17 @@ export const columns = [
     {
         accessorKey: "name",
         header: "Name",
-    },
-    {
-        accessorKey: "email",
-        header: "Email",
-    },
-    {
-        accessorKey: "roles.name",
-        header: "Role",
         cell: ({ row }) => (
-            <div className="capitalize">
-                {row.original.roles.map((r) => r.name).join(", ")}
-            </div>
+            <div className="capitalize">{row.getValue("name")}</div>
         ),
+    },
+    {
+        accessorKey: "code",
+        header: "Code",
+    },
+    {
+        accessorKey: "status",
+        header: 'status',
     },
     {
         id: "actions",
@@ -73,18 +70,16 @@ export const columns = [
 
             return (
                 <div className="text-right">
-                    <Can permit="edit users">
-                        <Button asChild variant="outline" size="icon">
-                            <Link
-                                href={route(
-                                    "admin.users.edit",
-                                    row.original.id
-                                )}
-                            >
-                                <Pencil className="h-4 w-4" />
-                            </Link>
-                        </Button>
-                    </Can>
+                    <Button asChild variant="outline" size="icon">
+                        <Link
+                            href={route(
+                                "admin.attributeFamilies.edit",
+                                row.original.id
+                            )}
+                        >
+                            <Pencil className="h-4 w-4" />
+                        </Link>
+                    </Button>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="ghost" className="h-8 w-8 p-0">
@@ -113,45 +108,36 @@ export const columns = [
     },
 ];
 
-export default function Users({ users }) {
+export default function AttributeFamilies({ attributeFamilies }) {
     return (
-        <AdminLayout>
-            <Head>
-                <title>Users</title>
-            </Head>
+        <DashboardLayout>
             <ScrollArea className="h-full">
                 <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
                     <PageHeading>
                         <PageHeading.Title>
-                            Users ({users.meta.total})
+                            Attribute Families
                         </PageHeading.Title>
                         <PageHeading.Actions>
-                            <Can permit="export users">
-                                <Button variant="outline">Download</Button>
-                            </Can>
-                            <Can permit="create users">
-                                <Button asChild>
-                                    <Link href={route("admin.users.create")}>
-                                        <PlusCircle className="h-4 w-4 mr-2" />{" "}
-                                        Create New
-                                    </Link>
-                                </Button>
-                            </Can>
+                            <Button variant="outline">Download</Button>
+                            <Button asChild>
+                                <Link
+                                    href={route(
+                                        "admin.attributeFamilies.create"
+                                    )}
+                                >
+                                    <PlusCircle className="h-4 w-4 mr-2" />{" "}
+                                    Create New
+                                </Link>
+                            </Button>
                         </PageHeading.Actions>
                     </PageHeading>
-                    <div className="grid gap-4 grid-cols-1">
-                        <RTable
-                            data={users.data}
-                            columns={columns}
-                            searchColumns={["name", "email"]}
-                            // exportable
-                            filename="users"
-                            paginationLinks={users.links}
-                            meta={users.meta}
-                        />
-                    </div>
+                    <RTable
+                        data={attributeFamilies.data}
+                        columns={columns}
+                        searchColumns={["title", "slug"]}
+                    />
                 </div>
             </ScrollArea>
-        </AdminLayout>
+        </DashboardLayout>
     );
 }
