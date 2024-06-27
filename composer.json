@@ -1,12 +1,39 @@
 {
-    "name": "laravel/laravel",
+    "name": "CodeRomeos/blaze",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "A laravel ecommerce using inertia and react",
     "keywords": [
+        "ecommerce",
+        "inertia",
+        "react",
+        "shadcn",
+        "tailwind",
+        "php",
+        "mysql",
         "laravel",
         "framework"
     ],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Abid Raza",
+            "email": "ari.abid@gmail.com",
+            "homepage": "https://github.com/ariabid",
+            "role": "Developer"
+        },
+        {
+            "name": "Shubham Surya",
+            "email": "shubhamsurya95@gmail.com",
+            "homepage": "https://github.com/ninja1ndia",
+            "role": "Developer"
+        },
+        {
+            "name": "Gautam Kumar",
+            "email": "gtmkmr2u@gmail.com",
+            "homepage": "https://github.com/r8here",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "astrotomic/laravel-translatable": "^11.13",
