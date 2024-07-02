@@ -2,8 +2,10 @@
 
 namespace GAS\Core\Helpers;
 
-class PermissionsHelper {
-    public static function genCrudPermissions($name, $morePermissions = [], $except = []) {
+class PermissionsHelper
+{
+    public static function genCrudPermissions($name, $morePermissions = [], $except = [])
+    {
         $ps = [
             'view',
             'create',
