@@ -49,7 +49,7 @@ class RoleController extends Controller
             'permission_ids.*' => 'required|exists:permissions,id',
         ]);
         $role = Role::create($request->all());
-        
+
         $permissions = Permission::whereIn('id', $request->permission_ids)->get();
         $role->syncPermissions($permissions);
 

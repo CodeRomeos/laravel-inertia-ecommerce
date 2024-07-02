@@ -1,7 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
+import { Head, Link } from "@inertiajs/react";
+import { Button } from "@/shadcn/ui/button";
+import {
+    ArrowUpDown,
+    ChevronDown,
+    MoreHorizontal,
+    PlusCircle,
+} from "lucide-react";
 import { Checkbox } from "@/shadcn/ui/checkbox";
 import {
     DropdownMenu,
@@ -16,6 +23,7 @@ import DashboardLayout from "../layout/layout";
 import { ScrollArea } from "@/shadcn/ui/scroll-area";
 import PageHeading from "../components/PageHeading";
 import RTable from "@/Components/Admin/RTable";
+import Can from "@/Components/Can";
 
 const data = [
     {
@@ -159,7 +167,12 @@ export default function Products() {
                     <PageHeading>
                         <PageHeading.Title>Products</PageHeading.Title>
                         <PageHeading.Actions>
-                            <Button>Download</Button>
+                            <Can permit="create products">
+                                <Link href={route("admin.products.create")}>
+                                    <PlusCircle className="h-4 w-4 mr-2" />{" "}
+                                    Create New
+                                </Link>
+                            </Can>
                         </PageHeading.Actions>
                     </PageHeading>
                     <RTable

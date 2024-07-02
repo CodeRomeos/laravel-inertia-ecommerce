@@ -7,6 +7,7 @@ use GAS\Admin\Http\Controllers\RoleController;
 use GAS\Admin\Http\Controllers\UserController;
 use GAS\Admin\Http\Controllers\ActivityController;
 use GAS\Admin\Http\Controllers\AttributeFamilies\AttributeFamilyController;
+use GAS\Admin\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -61,6 +62,14 @@ Route::prefix('activity-logs')->name('activityLogs.')->middleware('auth')->contr
 });
 
 Route::prefix('attribute-families')->name('attributeFamilies.')->controller(AttributeFamilyController::class)->group(function () {
+    Route::post('update/{id}', 'update')->name('update');
+    Route::post('store', 'store')->name('store');
+    Route::get('create', 'create')->name('create');
+    Route::get('{id}', 'edit')->name('edit');
+    Route::get('', 'index')->name('index');
+});
+
+Route::prefix('products')->name('products.')->controller(ProductController::class)->group(function () {
     Route::post('update/{id}', 'update')->name('update');
     Route::post('store', 'store')->name('store');
     Route::get('create', 'create')->name('create');

@@ -23,7 +23,6 @@ class ProductServiceProvider extends ServiceProvider
      */
     protected function registerConfig()
     {
-        
     }
 
     /**
